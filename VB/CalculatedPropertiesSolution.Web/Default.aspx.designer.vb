@@ -11,30 +11,30 @@
 
 Partial Public Class [Default]
 
-	''' <summary>
-	''' form2 control.
-	''' </summary>
-	''' <remarks>
-	''' Auto-generated field.
-	''' To modify move field declaration from designer file to code-behind file.
-	''' </remarks>
-	Protected form2 As System.Web.UI.HtmlControls.HtmlForm
+    ''' <summary>
+    ''' form2 control.
+    ''' </summary>
+    ''' <remarks>
+    ''' Auto-generated field.
+    ''' To modify move field declaration from designer file to code-behind file.
+    ''' </remarks>
+    Protected form2 As Global.System.Web.UI.HtmlControls.HtmlForm
 
-	''' <summary>
-	''' ProgressControl control.
-	''' </summary>
-	''' <remarks>
-	''' Auto-generated field.
-	''' To modify move field declaration from designer file to code-behind file.
-	''' </remarks>
-	Protected ProgressControl As Global.DevExpress.ExpressApp.Web.Controls.ASPxProgressControl
+    ''' <summary>
+    ''' ProgressControl control.
+    ''' </summary>
+    ''' <remarks>
+    ''' Auto-generated field.
+    ''' To modify move field declaration from designer file to code-behind file.
+    ''' </remarks>
+    Protected ProgressControl As Global.DevExpress.ExpressApp.Web.Controls.ASPxProgressControl
 
-	''' <summary>
-	''' Content control.
-	''' </summary>
-	''' <remarks>
-	''' Auto-generated field.
-	''' To modify move field declaration from designer file to code-behind file.
-	''' </remarks>
-	Protected Content As System.Web.UI.HtmlControls.HtmlGenericControl
+    ''' <summary>
+    ''' Content control.
+    ''' </summary>
+    ''' <remarks>
+    ''' Auto-generated field.
+    ''' To modify move field declaration from designer file to code-behind file.
+    ''' </remarks>
+    Protected Content As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 End Class
