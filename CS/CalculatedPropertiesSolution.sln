@@ -4,8 +4,6 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatedPropertiesSolution.Module", "CalculatedPropertiesSolution.Module\CalculatedPropertiesSolution.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatedPropertiesSolution.Mobile", "CalculatedPropertiesSolution.Mobile\CalculatedPropertiesSolution.Mobile.csproj", "{920ADD88-8181-492E-B860-89199E8C401E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatedPropertiesSolution.Web", "CalculatedPropertiesSolution.Web\CalculatedPropertiesSolution.Web.csproj", "{82A6DBC9-B1B4-44E4-9718-55DF930CD349}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatedPropertiesSolution.Win", "CalculatedPropertiesSolution.Win\CalculatedPropertiesSolution.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
