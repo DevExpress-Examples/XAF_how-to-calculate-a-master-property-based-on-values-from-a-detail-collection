@@ -1,1 +1,1 @@
-﻿<%@ Application Language="vb" CodeBehind="Global.asax.vb" Inherits="CalculatedPropertiesSolution.Web.Global"%>
+<%@ Application Language="C#" CodeBehind="Global.asax.cs" Inherits="CalculatedPropertiesSolution.Web.Global"%>
