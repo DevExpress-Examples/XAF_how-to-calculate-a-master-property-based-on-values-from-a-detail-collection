@@ -1,5 +1,0 @@
-﻿<Application Logo="ExpressAppLogo">
-	<Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
-	  <RibbonOptions RibbonControlStyle="Office2013" />
-	</Options>
-</Application>
