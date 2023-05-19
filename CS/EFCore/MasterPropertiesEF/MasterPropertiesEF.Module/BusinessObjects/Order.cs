@@ -19,35 +19,14 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             Product.UpdateOrdersCount(true);
             Product.UpdateOrdersTotal(true);
             Product.UpdateMaximumOrder(true);
+            Product.MyUpdateTotal();
+           
         }
 
         public virtual string Description { get; set; }
         public virtual decimal Total { get; set; }
-        //public decimal Total {
-        //    get { return fTotal; }
-        //    set {
-        //        bool modified = SetPropertyValue("Total", ref fTotal, value);
-        //        if (!IsLoading && !IsSaving && Product != null && modified) {
-        //            Product.UpdateOrdersTotal(true);
-        //            Product.UpdateMaximumOrder(true);
-        //        }
-        //    }
-        //}
+      
         public virtual Product Product { get; set; }
-        //private Product fProduct;
-        //[Association("Product-Orders")]
-        //public Product Product {
-        //    get { return fProduct; }
-        //    set {
-        //        Product oldProduct = fProduct;
-        //        bool modified = SetPropertyValue("Product", ref fProduct, value);
-        //        if (!IsLoading && !IsSaving && oldProduct != fProduct && modified) {
-        //            oldProduct = oldProduct ?? fProduct;
-        //            oldProduct.UpdateOrdersCount(true);
-        //            oldProduct.UpdateOrdersTotal(true);
-        //            oldProduct.UpdateMaximumOrder(true);
-        //        }
-        //    }
-        //}
+        
     }
 }

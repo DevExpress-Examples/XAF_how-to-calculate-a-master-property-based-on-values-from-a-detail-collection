@@ -8,22 +8,32 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CalculatedPropertiesSolution.Module.BusinessObjects {
     [DefaultClassOptions]
     public class Product : BaseObject, INotifyPropertyChanged {
-        
-        public virtual string Name {get;set;        }
+
+        public virtual string Name { get; set; }
         //[Association("Product-Orders"), Aggregated]
         //public XPCollection<Order> Orders {
         //    get { return GetCollection<Order>("Orders"); }
         //}
         public virtual IList<Order> Orders { get; set; } = new ObservableCollection<Order>();
 
-
-
+        public void MyUpdateTotal() {
+              TestInt += 5;
+            OnPropertyChanged("TestInt");
+            OnPropertyChanged("OrdersTotal");
+            //   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("OrdersTotal"));
+        }
+        public virtual int TestInt { get => testInt; set {
+                if (SetPropertyValue(ref testInt, value))
+                    OnPropertyChanged("TestInt");
+            }
+        }
 
         private int? fOrdersCount = null;
         public int? OrdersCount {
@@ -43,11 +53,30 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
         }
         private decimal? fMaximumOrder = null;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private PropertyChangedEventHandler propertyChanged;
+        private int testInt;
+
+        protected bool SetPropertyValue<T>(ref T propertyValue, T newValue, [CallerMemberName] string propertyName = null) {
+            if (EqualityComparer<T>.Default.Equals(propertyValue, newValue)) {
+                return false;
+            }
+            propertyValue = newValue;
+            OnPropertyChanged(propertyName);
+            return true;
+        }
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+            if (propertyChanged != null) {
+                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged {
+            add { propertyChanged += value; }
+            remove { propertyChanged -= value; }
+        }
 
         public decimal? MaximumOrder {
             get {
-                if ( fMaximumOrder == null)
+                if (fMaximumOrder == null)
                     UpdateMaximumOrder(false);
                 return fMaximumOrder;
             }
@@ -55,31 +84,23 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
         public void UpdateOrdersCount(bool forceChangeEvents) {
             int? oldOrdersCount = fOrdersCount;
             fOrdersCount = Orders.Count;
-            if (forceChangeEvents)
-                OnChanged("OrdersCount", oldOrdersCount, fOrdersCount);
+            if (forceChangeEvents) {
+                OnPropertyChanged("OrdersCount");
+
+            }
         }
 
-        private void OnChanged(string v, decimal? oldOrdersCount, decimal? fOrdersCount) {
-            //   PropertyChanged(this,new PropertyChangedEventArgs(v));  
-            RaisePropertyChanged(v);
-            var st = this.GetType();
-            var st2 = st.BaseType;
-        }
-        protected void RaisePropertyChanged(string propertyName) {
-
-            if (PropertyChanged != null)
-
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-
-        }
+  
+    
         public void UpdateOrdersTotal(bool forceChangeEvents) {
             decimal? oldOrdersTotal = fOrdersTotal;
             decimal tempTotal = 0m;
             foreach (Order detail in Orders)
                 tempTotal += detail.Total;
             fOrdersTotal = tempTotal;
-            if (forceChangeEvents)
-                OnChanged("OrdersTotal", oldOrdersTotal, fOrdersTotal);
+            if (forceChangeEvents) {
+                OnPropertyChanged("OrdersTotal");
+            }
         }
         public void UpdateMaximumOrder(bool forceChangeEvents) {
             decimal? oldMaximumOrder = fMaximumOrder;
@@ -89,11 +110,11 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
                     tempMaximum = detail.Total;
             fMaximumOrder = tempMaximum;
             if (forceChangeEvents)
-                OnChanged("MaximumOrder", oldMaximumOrder, fMaximumOrder);
+                OnPropertyChanged("MaximumOrder");
         }
 
 
-      
+
         private void Reset() {
             fOrdersCount = null;
             fOrdersTotal = null;
