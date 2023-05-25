@@ -16,10 +16,7 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
         }
 
         private void Order_PropertyChanged(object sender, PropertyChangedEventArgs e) {
-            Product.UpdateOrdersCount(true);
-            Product.UpdateOrdersTotal(true);
-            Product.UpdateMaximumOrder(true);
-           
+            Product.UpdateCalculatedProperties();
         }
 
         public virtual string Description { get; set; }

@@ -22,7 +22,7 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
         public int? OrdersCount {
             get {
                 if (fOrdersCount == null)
-                    UpdateOrdersCount(false);
+                    UpdateCalculatedProperties();
                 return fOrdersCount;
             }
         }
@@ -30,7 +30,7 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
         public decimal? OrdersTotal {
             get {
                 if (fOrdersTotal == null)
-                    UpdateOrdersTotal(false);
+                    UpdateCalculatedProperties();
                 return fOrdersTotal;
             }
         }
@@ -38,47 +38,61 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
         public decimal? MaximumOrder {
             get {
                 if (fMaximumOrder == null)
-                    UpdateMaximumOrder(false);
+                    UpdateCalculatedProperties();
                 return fMaximumOrder;
             }
         }
-        public void UpdateOrdersCount(bool forceChangeEvents) {
-            int? oldOrdersCount = fOrdersCount;
-            fOrdersCount = Orders.Count;
-            if (forceChangeEvents) {
-                // OnPropertyChanged("OrdersCount");
+        //public void UpdateOrdersCount(bool forceChangeEvents) {
+        //    int? oldOrdersCount = fOrdersCount;
+        //    fOrdersCount = Orders.Count;
+        //    if (forceChangeEvents) {
+        //        // OnPropertyChanged("OrdersCount");
 
-            }
-        }
-
-
-
-        public void UpdateOrdersTotal(bool forceChangeEvents) {
-            decimal? oldOrdersTotal = fOrdersTotal;
-            decimal tempTotal = 0m;
-            foreach (Order detail in Orders)
-                tempTotal += detail.Total;
-            fOrdersTotal = tempTotal;
-            if (forceChangeEvents) {
-                //  OnPropertyChanged("OrdersTotal");
-            }
-        }
-        public void UpdateMaximumOrder(bool forceChangeEvents) {
-            decimal? oldMaximumOrder = fMaximumOrder;
+        //    }
+        //}
+        public void UpdateCalculatedProperties() {
+            
             decimal tempMaximum = 0m;
-            foreach (Order detail in Orders)
-                if (detail.Total > tempMaximum)
+            decimal tempTotal = 0m;
+            foreach (Order detail in Orders) {
+                if (detail.Total > tempMaximum) {
                     tempMaximum = detail.Total;
-            fMaximumOrder = tempMaximum;
-            if (forceChangeEvents) {
-                // OnPropertyChanged("MaximumOrder");
+                }
+                tempTotal += detail.Total;
             }
+            fMaximumOrder = tempMaximum;
+            fOrdersTotal = tempTotal;
+            fOrdersCount = Orders.Count;
+
         }
 
-        private void Reset() {
-            fOrdersCount = null;
-            fOrdersTotal = null;
-            fMaximumOrder = null;
-        }
+
+        //public void UpdateOrdersTotal(bool forceChangeEvents) {
+        //    decimal? oldOrdersTotal = fOrdersTotal;
+        //    decimal tempTotal = 0m;
+        //    foreach (Order detail in Orders)
+        //        tempTotal += detail.Total;
+        //    fOrdersTotal = tempTotal;
+        //    if (forceChangeEvents) {
+        //        //  OnPropertyChanged("OrdersTotal");
+        //    }
+        //}
+        //public void UpdateMaximumOrder(bool forceChangeEvents) {
+        //    decimal? oldMaximumOrder = fMaximumOrder;
+        //    decimal tempMaximum = 0m;
+        //    foreach (Order detail in Orders)
+        //        if (detail.Total > tempMaximum)
+        //            tempMaximum = detail.Total;
+        //    fMaximumOrder = tempMaximum;
+        //    if (forceChangeEvents) {
+        //        // OnPropertyChanged("MaximumOrder");
+        //    }
+        //}
+
+        //private void Reset() {
+        //    fOrdersCount = null;
+        //    fOrdersTotal = null;
+        //    fMaximumOrder = null;
+        //}
     }
 }
