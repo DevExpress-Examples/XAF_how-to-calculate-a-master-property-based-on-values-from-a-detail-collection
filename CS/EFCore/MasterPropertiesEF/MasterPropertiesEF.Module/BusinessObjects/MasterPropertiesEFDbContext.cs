@@ -41,5 +41,6 @@ public class MasterPropertiesEFEFCoreDbContext : DbContext {
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         base.OnModelCreating(modelBuilder);
         modelBuilder.HasChangeTrackingStrategy(ChangeTrackingStrategy.ChangingAndChangedNotificationsWithOriginalValues);
+        modelBuilder.UsePropertyAccessMode(PropertyAccessMode.FieldDuringConstruction);
     }
 }

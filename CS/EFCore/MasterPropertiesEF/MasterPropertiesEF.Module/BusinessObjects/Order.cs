@@ -19,7 +19,6 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             Product.UpdateOrdersCount(true);
             Product.UpdateOrdersTotal(true);
             Product.UpdateMaximumOrder(true);
-            Product.MyUpdateTotal();
            
         }
 
