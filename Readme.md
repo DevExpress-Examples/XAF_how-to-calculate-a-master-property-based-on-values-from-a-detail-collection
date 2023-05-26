@@ -6,8 +6,8 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Order.cs](./CS/CalculatedPropertiesSolution.Module/BusinessObjects/Order.cs) (VB: [Order.vb](./VB/CalculatedPropertiesSolution.Module/BusinessObjects/Order.vb))
-* [Product.cs](./CS/CalculatedPropertiesSolution.Module/BusinessObjects/Product.cs) (VB: [Product.vb](./VB/CalculatedPropertiesSolution.Module/BusinessObjects/Product.vb))
+* [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
+* [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
 <!-- default file list end -->
 # How to calculate a master property based on values from a details collection
 
