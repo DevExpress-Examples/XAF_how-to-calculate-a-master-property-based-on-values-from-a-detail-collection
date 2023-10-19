@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace CalculatedPropertiesSolution.Module.BusinessObjects {
     [DefaultClassOptions]
-    public class Product : BaseObject {
+    public class Product : BaseObject,INotifyPropertyChanged {
 
         public virtual string Name { get; set; }
         public virtual IList<Order> Orders { get; set; } = new ObservableCollection<Order>();
@@ -35,6 +35,15 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             }
         }
         private decimal? fMaximumOrder = null;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void RaisePropertyChanged(string name) {
+            if(PropertyChanged != null) {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
         public decimal? MaximumOrder {
             get {
                 if (fMaximumOrder == null)
@@ -42,14 +51,7 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
                 return fMaximumOrder;
             }
         }
-        //public void UpdateOrdersCount(bool forceChangeEvents) {
-        //    int? oldOrdersCount = fOrdersCount;
-        //    fOrdersCount = Orders.Count;
-        //    if (forceChangeEvents) {
-        //        // OnPropertyChanged("OrdersCount");
-
-        //    }
-        //}
+   
         public void UpdateCalculatedProperties() {
             
             decimal tempMaximum = 0m;
@@ -63,36 +65,17 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             fMaximumOrder = tempMaximum;
             fOrdersTotal = tempTotal;
             fOrdersCount = Orders.Count;
+            RaisePropertyChanged(nameof(OrdersCount));
 
         }
 
+        public override void OnLoaded() {
+            base.OnLoaded();
+            ((ObservableCollection<Order>)this.Orders).CollectionChanged += Product_CollectionChanged;
+        }
 
-        //public void UpdateOrdersTotal(bool forceChangeEvents) {
-        //    decimal? oldOrdersTotal = fOrdersTotal;
-        //    decimal tempTotal = 0m;
-        //    foreach (Order detail in Orders)
-        //        tempTotal += detail.Total;
-        //    fOrdersTotal = tempTotal;
-        //    if (forceChangeEvents) {
-        //        //  OnPropertyChanged("OrdersTotal");
-        //    }
-        //}
-        //public void UpdateMaximumOrder(bool forceChangeEvents) {
-        //    decimal? oldMaximumOrder = fMaximumOrder;
-        //    decimal tempMaximum = 0m;
-        //    foreach (Order detail in Orders)
-        //        if (detail.Total > tempMaximum)
-        //            tempMaximum = detail.Total;
-        //    fMaximumOrder = tempMaximum;
-        //    if (forceChangeEvents) {
-        //        // OnPropertyChanged("MaximumOrder");
-        //    }
-        //}
-
-        //private void Reset() {
-        //    fOrdersCount = null;
-        //    fOrdersTotal = null;
-        //    fMaximumOrder = null;
-        //}
+        private void Product_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e) {
+            UpdateCalculatedProperties();
+        }
     }
 }
