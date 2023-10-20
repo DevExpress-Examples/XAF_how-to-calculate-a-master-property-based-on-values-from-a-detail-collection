@@ -69,6 +69,10 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
 
         }
 
+        public override void OnCreated() {
+            base.OnCreated();
+            ((ObservableCollection<Order>)this.Orders).CollectionChanged += Product_CollectionChanged;
+        }
         public override void OnLoaded() {
             base.OnLoaded();
             ((ObservableCollection<Order>)this.Orders).CollectionChanged += Product_CollectionChanged;
