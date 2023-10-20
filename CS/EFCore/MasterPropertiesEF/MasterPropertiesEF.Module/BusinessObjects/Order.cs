@@ -23,6 +23,9 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             base.OnLoaded();
             ((INotifyPropertyChanged)this).PropertyChanged += Order_PropertyChanged;
         }
-
+        public override void OnCreated() {
+            base.OnCreated();
+            ((INotifyPropertyChanged)this).PropertyChanged += Order_PropertyChanged;
+        }
     }
 }

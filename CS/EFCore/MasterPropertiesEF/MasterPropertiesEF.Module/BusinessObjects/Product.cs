@@ -16,21 +16,28 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
     [DefaultClassOptions]
     public class Product : BaseObject,INotifyPropertyChanged {
 
-        public virtual string Name { get; set; }
+        private string name;
+        public virtual string Name {
+            get {
+                return name;
+            }
+            set {
+                if (name != value) {
+                    name = value;
+                    RaisePropertyChanged(nameof(Name));
+                }
+            }
+        }
         public virtual IList<Order> Orders { get; set; } = new ObservableCollection<Order>();
         private int? fOrdersCount = null;
         public int? OrdersCount {
             get {
-                if (fOrdersCount == null)
-                    UpdateCalculatedProperties();
                 return fOrdersCount;
             }
         }
         private decimal? fOrdersTotal = null;
         public decimal? OrdersTotal {
             get {
-                if (fOrdersTotal == null)
-                    UpdateCalculatedProperties();
                 return fOrdersTotal;
             }
         }
@@ -46,14 +53,12 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
 
         public decimal? MaximumOrder {
             get {
-                if (fMaximumOrder == null)
-                    UpdateCalculatedProperties();
                 return fMaximumOrder;
             }
         }
-   
+
         public void UpdateCalculatedProperties() {
-            
+
             decimal tempMaximum = 0m;
             decimal tempTotal = 0m;
             foreach (Order detail in Orders) {
@@ -66,15 +71,18 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             fOrdersTotal = tempTotal;
             fOrdersCount = Orders.Count;
             RaisePropertyChanged(nameof(OrdersCount));
-
+            RaisePropertyChanged(nameof(OrdersTotal));
+            RaisePropertyChanged(nameof(MaximumOrder));
         }
 
         public override void OnCreated() {
             base.OnCreated();
+            UpdateCalculatedProperties();
             ((ObservableCollection<Order>)this.Orders).CollectionChanged += Product_CollectionChanged;
         }
         public override void OnLoaded() {
             base.OnLoaded();
+            UpdateCalculatedProperties();
             ((ObservableCollection<Order>)this.Orders).CollectionChanged += Product_CollectionChanged;
         }
 
