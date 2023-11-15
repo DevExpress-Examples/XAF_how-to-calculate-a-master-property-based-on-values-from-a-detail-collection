@@ -6,6 +6,7 @@
 
 # How to calculate a master property based on values from a details collection
 
+![chrome_HiLXq4Oolu](https://github.com/DevExpress-Examples/XAF_how-to-calculate-a-master-property-based-on-values-from-a-details-collection-e305/assets/14300209/66c95bc7-11b2-4b9d-9754-03d93c91066a)
 
 
 ## Implementation Details
