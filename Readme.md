@@ -3,19 +3,23 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E305)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
-* [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
-<!-- default file list end -->
 # How to calculate a master property based on values from a details collection
 
 
-<p>See the <a href="http://documentation.devexpress.com/#Xaf/CustomDocument3179">How to: Calculate a Property Value Based on Values from a Detail Collection</a> help topic for more information.</p><p><strong>See Also:</strong><br />
-<a href="https://www.devexpress.com/Support/Center/p/A2944">XPO Best Practices</a><br />
-<a href="https://www.devexpress.com/Support/Center/p/E975">How to display details collections with descendant classes filtered by object type in a DetailView</a></p>
 
-<br/>
+## Implementation Details
 
+Refer to the following help topic for information about how to accomplish this task with XPO: [Calculate a Property Value Based on Values from a Detail Collection(XPO)](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
+
+As for EF Core, please review this example's files to learn how to accomplish this task:
+- [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
+
+
+
+## Files to Review
+
+- [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
 
