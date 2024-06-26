@@ -14,7 +14,12 @@ For EF Core, review the following files for implementation details:
 - [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
 - [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
 
-For XPO, refer to the following help topic: [Calculate a Property Value Based on Values from a Detail Collection (XPO)](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
+For XPO, review the following files:
+
+- [Order.cs](CS/XPO/MasterProperties/MasterProperties.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/XPO/MasterProperties/MasterProperties.Module/BusinessObjects/Product.cs)
+
+You can also refer to the following help topic for a step-by-step instructions: [Calculate a Property Value Based on Values from a Detail Collection (XPO)](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
 
 ## Files to Review
 
