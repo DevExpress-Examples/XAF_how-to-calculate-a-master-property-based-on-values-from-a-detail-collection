@@ -20,6 +20,7 @@ For XPO, refer to the following help topic: [Calculate a Property Value Based on
 
 - [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
 - [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
+
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
