@@ -14,20 +14,9 @@ using System.Threading.Tasks;
 
 namespace CalculatedPropertiesSolution.Module.BusinessObjects {
     [DefaultClassOptions]
-    public class Product : BaseObject,INotifyPropertyChanged {
+    public class Product :BaseObject {
 
-        private string name;
-        public virtual string Name {
-            get {
-                return name;
-            }
-            set {
-                if (name != value) {
-                    name = value;
-                    RaisePropertyChanged(nameof(Name));
-                }
-            }
-        }
+        public virtual string Name { get; set; }
         public virtual IList<Order> Orders { get; set; } = new ObservableCollection<Order>();
         private int? fOrdersCount = null;
         public int? OrdersCount {
@@ -42,15 +31,6 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             }
         }
         private decimal? fMaximumOrder = null;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void RaisePropertyChanged(string name) {
-            if(PropertyChanged != null) {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
         public decimal? MaximumOrder {
             get {
                 return fMaximumOrder;
@@ -61,8 +41,8 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
 
             decimal tempMaximum = 0m;
             decimal tempTotal = 0m;
-            foreach (Order detail in Orders) {
-                if (detail.Total > tempMaximum) {
+            foreach(Order detail in Orders) {
+                if(detail.Total > tempMaximum) {
                     tempMaximum = detail.Total;
                 }
                 tempTotal += detail.Total;
@@ -70,9 +50,9 @@ namespace CalculatedPropertiesSolution.Module.BusinessObjects {
             fMaximumOrder = tempMaximum;
             fOrdersTotal = tempTotal;
             fOrdersCount = Orders.Count;
-            RaisePropertyChanged(nameof(OrdersCount));
-            RaisePropertyChanged(nameof(OrdersTotal));
-            RaisePropertyChanged(nameof(MaximumOrder));
+            base.OnPropertyChanged(this, new PropertyChangedEventArgs(nameof(OrdersCount)));
+            base.OnPropertyChanged(this, new PropertyChangedEventArgs(nameof(OrdersTotal)));
+            base.OnPropertyChanged(this, new PropertyChangedEventArgs(nameof(MaximumOrder)));
         }
 
         public override void OnCreated() {

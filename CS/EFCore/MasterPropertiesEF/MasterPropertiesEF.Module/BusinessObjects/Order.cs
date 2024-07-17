@@ -11,21 +11,12 @@ using System.Threading.Tasks;
 namespace CalculatedPropertiesSolution.Module.BusinessObjects {
     [DefaultClassOptions]
     public class Order : BaseObject {
-        private void Order_PropertyChanged(object sender, PropertyChangedEventArgs e) {
-            Product?.UpdateCalculatedProperties();
-        }
         public virtual string Description { get; set; }
         public virtual decimal Total { get; set; }
-
         public virtual Product Product { get; set; }
-
-        public override void OnLoaded() {
-            base.OnLoaded();
-            ((INotifyPropertyChanged)this).PropertyChanged += Order_PropertyChanged;
-        }
-        public override void OnCreated() {
-            base.OnCreated();
-            ((INotifyPropertyChanged)this).PropertyChanged += Order_PropertyChanged;
+        protected override void OnPropertyChanged(object sender, PropertyChangedEventArgs e) {
+            base.OnPropertyChanged(sender, e);
+            Product?.UpdateCalculatedProperties();
         }
     }
 }
