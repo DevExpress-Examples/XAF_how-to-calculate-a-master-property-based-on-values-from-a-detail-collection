@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" ?>
 <Application Title="MasterProperties">
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
   <Views>
   </Views>
 </Application>

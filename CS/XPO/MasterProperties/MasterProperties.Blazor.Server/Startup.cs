@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Server.Circuits;
 using DevExpress.ExpressApp.Xpo;
 using MasterProperties.Blazor.Server.Services;
-using DevExpress.ExpressApp.Core;
 
 namespace MasterProperties.Blazor.Server;
 
@@ -29,6 +28,10 @@ public class Startup {
         services.AddXaf(Configuration, builder => {
             builder.UseApplication<MasterPropertiesBlazorApplication>();
             builder.Modules
+                .AddConditionalAppearance()
+                .AddValidation(options => {
+                    options.AllowValidationDetailsAccess = false;
+                })
                 .Add<MasterProperties.Module.MasterPropertiesModule>()
             	.Add<MasterPropertiesBlazorModule>();
             builder.ObjectSpaceProviders

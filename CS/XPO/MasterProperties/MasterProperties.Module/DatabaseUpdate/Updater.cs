@@ -5,6 +5,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
+using Microsoft.Extensions.DependencyInjection;
 using CalculatedPropertiesSolution.Module.BusinessObjects;
 
 namespace MasterProperties.Module.DatabaseUpdate;
@@ -16,13 +17,13 @@ public class Updater : ModuleUpdater {
     }
     public override void UpdateDatabaseAfterUpdateSchema() {
         base.UpdateDatabaseAfterUpdateSchema();
-        var cnt = ObjectSpace.GetObjectsCount(typeof(Product),null);
+        var cnt = ObjectSpace.GetObjectsCount(typeof(Product), null);
         if(cnt > 0) {
             return;
         }
         Product product = ObjectSpace.CreateObject<Product>();
         product.Name = "Chai";
-        for (int i = 0; i < 10; i++) {
+        for(int i = 0; i < 10; i++) {
             Order order = ObjectSpace.CreateObject<Order>();
             order.Product = product;
             order.Description = "Order " + i.ToString();

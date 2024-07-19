@@ -14,8 +14,18 @@ namespace MasterProperties.Win;
 public class ApplicationBuilder : IDesignTimeApplicationFactory {
     public static WinApplication BuildApplication(string connectionString) {
         var builder = WinApplication.CreateBuilder();
+        // Register custom services for Dependency Injection. For more information, refer to the following topic: https://docs.devexpress.com/eXpressAppFramework/404430/
+        // builder.Services.AddScoped<CustomService>();
+        // Register 3rd-party IoC containers (like Autofac, Dryloc, etc.)
+        // builder.UseServiceProviderFactory(new DryIocServiceProviderFactory());
+        // builder.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
         builder.UseApplication<MasterPropertiesWindowsFormsApplication>();
         builder.Modules
+            .AddConditionalAppearance()
+            .AddValidation(options => {
+                options.AllowValidationDetailsAccess = false;
+            })
             .Add<MasterProperties.Module.MasterPropertiesModule>()
         	.Add<MasterPropertiesWinModule>();
         builder.ObjectSpaceProviders
