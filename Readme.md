@@ -1,24 +1,30 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128588058/22.2.6%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E305)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
-* [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
-<!-- default file list end -->
-# How to calculate a master property based on values from a details collection
+# XAF - How to calculate a master property based on values from a detail collection
 
+This example implements a business class that has one of its properties calculated based on properties of objects contained in the child object collection.
 
-<p>See the <a href="http://documentation.devexpress.com/#Xaf/CustomDocument3179">How to: Calculate a Property Value Based on Values from a Detail Collection</a> help topic for more information.</p><p><strong>See Also:</strong><br />
-<a href="https://www.devexpress.com/Support/Center/p/A2944">XPO Best Practices</a><br />
-<a href="https://www.devexpress.com/Support/Center/p/E975">How to display details collections with descendant classes filtered by object type in a DetailView</a></p>
+![chrome_HiLXq4Oolu](https://github.com/DevExpress-Examples/XAF_how-to-calculate-a-master-property-based-on-values-from-a-details-collection-e305/assets/14300209/66c95bc7-11b2-4b9d-9754-03d93c91066a)
 
-<br/>
+For EF Core, review the following files for implementation details:
+- [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
 
+For XPO, review the following files:
+
+- [Order.cs](CS/XPO/MasterProperties/MasterProperties.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/XPO/MasterProperties/MasterProperties.Module/BusinessObjects/Product.cs)
+
+You can also refer to the following help topic for a step-by-step instructions: [Calculate a Property Value Based on Values from a Detail Collection (XPO)](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
+
+## Files to Review
+
+- [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
