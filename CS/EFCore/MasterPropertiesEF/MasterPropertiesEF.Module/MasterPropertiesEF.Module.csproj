@@ -22,6 +22,5 @@
     <PackageReference Include="DevExpress.Persistent.Base" Version="22.2.6" />
     <PackageReference Include="DevExpress.Persistent.BaseImpl.EFCore" Version="22.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.10" />
   </ItemGroup>
 </Project>
