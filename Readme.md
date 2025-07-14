@@ -6,20 +6,12 @@
 
 # XAF - How to calculate a master property based on values from a detail collection
 
-This example implements a business class that has one of its properties calculated based on properties of objects contained in the child object collection.
+This example implements a business class that has one of its properties calculated based on properties of objects contained in the child object collection.  See the following help topics for more information: 
+
+* [Calculate a Property Value Based on Values from a Detail Collection in EF Core](http://docs.devexpress.devx/eXpressAppFramework/405280/business-model-design-orm/business-model-design-with-entity-framework-core/ef-core-calculate-a-property-value-based-on-values-from-a-detail-collection#lookuppropertyeditor)
+* [Calculate a Property Value Based on Values from a Detail Collection in XPO](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
 
 ![chrome_HiLXq4Oolu](https://github.com/DevExpress-Examples/XAF_how-to-calculate-a-master-property-based-on-values-from-a-details-collection-e305/assets/14300209/66c95bc7-11b2-4b9d-9754-03d93c91066a)
-
-For EF Core, review the following files for implementation details:
-- [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
-- [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
-
-For XPO, review the following files:
-
-- [Order.cs](CS/XPO/MasterProperties/MasterProperties.Module/BusinessObjects/Order.cs)
-- [Product.cs](CS/XPO/MasterProperties/MasterProperties.Module/BusinessObjects/Product.cs)
-
-You can also refer to the following help topic for a step-by-step instructions: [Calculate a Property Value Based on Values from a Detail Collection (XPO)](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
 
 ## Files to Review
 
