@@ -6,7 +6,7 @@
 
 # XAF - How to calculate a master property based on values from a detail collection
 
-This example implements a business class that has one of its properties calculated based on properties of objects contained in the child object collection.  See the following help topics for more information: 
+This example implements a business class that calculates one of its properties based on properties of objects contained in the child object collection. See the following help topics for more information: 
 
 * [Calculate a Property Value Based on Values from a Detail Collection in EF Core](http://docs.devexpress.devx/eXpressAppFramework/405280/business-model-design-orm/business-model-design-with-entity-framework-core/ef-core-calculate-a-property-value-based-on-values-from-a-detail-collection#lookuppropertyeditor)
 * [Calculate a Property Value Based on Values from a Detail Collection in XPO](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
