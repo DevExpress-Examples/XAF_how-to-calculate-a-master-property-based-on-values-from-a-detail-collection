@@ -3,21 +3,20 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
-* [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
-<!-- default file list end -->
-# How to calculate a master property based on values from a details collection
+# XAF - How to calculate a master property based on values from a detail collection
 
+This example implements a business class that calculates one of its properties based on properties of objects contained in the child object collection. See the following help topics for more information: 
 
-<p>See the <a href="http://documentation.devexpress.com/#Xaf/CustomDocument3179">How to: Calculate a Property Value Based on Values from a Detail Collection</a> help topic for more information.</p><p><strong>See Also:</strong><br />
-<a href="https://www.devexpress.com/Support/Center/p/A2944">XPO Best Practices</a><br />
-<a href="https://www.devexpress.com/Support/Center/p/E975">How to display details collections with descendant classes filtered by object type in a DetailView</a></p>
+* [Calculate a Property Value Based on Values from a Detail Collection in EF Core](http://docs.devexpress.devx/eXpressAppFramework/405280/business-model-design-orm/business-model-design-with-entity-framework-core/ef-core-calculate-a-property-value-based-on-values-from-a-detail-collection#lookuppropertyeditor)
+* [Calculate a Property Value Based on Values from a Detail Collection in XPO](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
 
-<br/>
+![chrome_HiLXq4Oolu](https://github.com/DevExpress-Examples/XAF_how-to-calculate-a-master-property-based-on-values-from-a-details-collection-e305/assets/14300209/66c95bc7-11b2-4b9d-9754-03d93c91066a)
 
+## Files to Review
+
+- [Order.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Order.cs)
+- [Product.cs](CS/EFCore/MasterPropertiesEF/MasterPropertiesEF.Module/BusinessObjects/Product.cs) 
 
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
