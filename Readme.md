@@ -9,7 +9,7 @@
 
 This example implements a business class that calculates one of its properties based on properties of objects contained in the child object collection. See the following help topics for more information: 
 
-* [Calculate a Property Value Based on Values from a Detail Collection in EF Core](https://docs.devexpress.com/eXpressAppFramework/405280/business-model-design-orm/business-model-design-with-entity-framework-core/ef-core-calculate-a-property-value-based-on-values-from-a-detail-collection#lookuppropertyeditor)
+* [Calculate a Property Value Based on Values from a Detail Collection in EF Core](https://docs.devexpress.com/eXpressAppFramework/405280/business-model-design-orm/business-model-design-with-entity-framework-core/ef-core-calculate-a-property-value-based-on-values-from-a-detail-collection)
 * [Calculate a Property Value Based on Values from a Detail Collection in XPO](https://docs.devexpress.com/eXpressAppFramework/113179/business-model-design-orm/business-model-design-with-xpo/calculate-a-property-value-based-on-values-from-a-detail-collection)
 
 ![chrome_HiLXq4Oolu](https://github.com/DevExpress-Examples/XAF_how-to-calculate-a-master-property-based-on-values-from-a-details-collection-e305/assets/14300209/66c95bc7-11b2-4b9d-9754-03d93c91066a)
@@ -26,4 +26,5 @@ This example implements a business class that calculates one of its properties b
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
