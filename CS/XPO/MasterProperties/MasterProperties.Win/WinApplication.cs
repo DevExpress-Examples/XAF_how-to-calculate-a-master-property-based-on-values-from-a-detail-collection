@@ -14,7 +14,6 @@ public class MasterPropertiesWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "MasterProperties";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += MasterPropertiesWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += MasterPropertiesWindowsFormsApplication_CustomizeLanguagesList;
     }
